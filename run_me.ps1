@@ -9,3 +9,5 @@ choco install spotify -y
 .\git_script.sh
 cd Windows10Debloater
 .\Windows10SysPrepDebloater.ps1 -y
+cd ..
+.\Disable_Windows_Defender_on_Windows_10.bat -y
