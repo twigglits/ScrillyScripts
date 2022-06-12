@@ -1,4 +1,4 @@
-# ScrillyScripts
+# SillyScripts
 A script that allows you to debloat Windows 10 and install commonly needed apps
 
 ## Instructions:
