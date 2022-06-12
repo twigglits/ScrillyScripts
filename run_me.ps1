@@ -6,6 +6,7 @@ choco install googlechrome -y
 choco install steamclient -y
 choco install 7zip -y
 choco install spotify -y
+choco upgrade all
 .\git_script.sh
 cd Windows10Debloater
 .\Windows10SysPrepDebloater.ps1 -y
