@@ -16,7 +16,7 @@ Then run the run_me.sp1 script with the following command:
 NOTES:
 
 You can add/remove desired apps to be installed by opening run_me.sp1 with a text editor
-and the line ```choco install <your-desired-package-here> -y``` Please NOTE that git is 
+and the line ```choco install <your-desired-package-here> -y``` .Please NOTE that git is 
 mandatory for this script and must be installed to allow for full execution of the script.
  
 While most of the script executes in unattended mode, you will have to 
