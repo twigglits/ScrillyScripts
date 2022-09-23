@@ -30,7 +30,7 @@ Currently the script is set to install the following apps in unattended mode:
 To install the list of apps specified in the script, run:
 
 ```
-add_common_apps.ps1
+.\add_common_apps.ps1
 ```
 
 NOTES:
