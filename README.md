@@ -1,7 +1,13 @@
 # SillyScripts
 A script that allows you to debloat Windows 10 and install commonly needed apps
 
-## Instructions:
+## Pre-requisite for script to run:
+
+The following line MUST be run as administrator in powershell so that scripts can be run on your system:
+```
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
 
 #### For removing bloatware do:
 
