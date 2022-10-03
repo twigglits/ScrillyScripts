@@ -4,6 +4,7 @@ choco install spotify -y
 choco install discord -y
 choco install googlechrome -y
 choco install steam-client -y
+choco install qbittorrent -y
 choco install 7zip -y
 choco upgrade all
 
