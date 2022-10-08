@@ -5,6 +5,6 @@ choco install discord -y
 choco install googlechrome -y
 choco install steam-client -y
 choco install qbittorrent -y
+choco install vscode -y
 choco install 7zip -y
-choco upgrade all
-
+choco upgrade all -y
