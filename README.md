@@ -14,7 +14,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 First, be sure to open Powershell with `Administrator` privileges,
 Then run the following command:
 ```
-cd ~\<Location to where you downloaded the folder>\ScrillyScripts 
+cd ~\<Location to where you downloaded the folder>\SillyScripts 
 ```
 Then run the run_me.sp1 script with the following command:
 ```
