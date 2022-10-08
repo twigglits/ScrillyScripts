@@ -45,3 +45,8 @@ You can `add` or `remove` desired apps to be installed by opening [add_common_ap
 and add the line `choco install <your-desired-package-here> -y` 
  
 While most of the script executes in unattended mode, you will have to specify that you would like to Disable Windows Defender near the end of the execution of this script.
+
+Things to improve:
+
+* Removal of third party windows defender disbaling script and replacing it with low level registry editor script that forcible removes windows defender and subsequent security background processes
+* Improved modularity of both common apps as well as specific drivers that are installed in their scripts `add_common_apps.ps1` and `add_specific_drivers.ps1` respectively
