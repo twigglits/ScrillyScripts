@@ -24,14 +24,17 @@ Please NOTE that `git` is mandatory for this script and must be installed to all
 
 #### For installing commonly used apps:
 
-You can open and modify the file [add_common_apps.ps1](add_common_apps.ps1) and add more lines of apps that get installed:
+You can open and modify the file [apps_list.ps1](apps_list.ps1) and add more lines of apps that get installed:
 
 Currently the script is set to install the following apps in unattended mode:
 
-*spotify
-*googlechrome
-*steamclient
-*7zip
+* spotify
+* discord
+* googlechrome
+* steamclient
+* qbittorrent
+* vscode
+* 7zip
 
 To install the list of apps specified in the script, run:
 
@@ -41,7 +44,7 @@ To install the list of apps specified in the script, run:
 
 NOTES:
 
-You can `add` or `remove` desired apps to be installed by opening [add_common_apps.ps1](add_common_apps.ps1) with a text editor
+You can `add` or `remove` desired apps to be installed by opening [apps_list.ps1](apps_list.ps1) with a text editor
 and add the line `choco install <your-desired-package-here> -y` 
  
 While most of the script executes in unattended mode, you will have to specify that you would like to Disable Windows Defender near the end of the execution of this script.
