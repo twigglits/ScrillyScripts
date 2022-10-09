@@ -1,0 +1,23 @@
+# LAN
+https://dlcdnets.asus.com/pub/ASUS/lan/LAN_V20_1_2019_0_WHQL.zip
+
+# WIRELESS
+https://dlcdnets.asus.com/pub/ASUS/misc/wireless/WIFI_Win10_V6_34_223_5.zip
+
+# CHIPSET
+https://dlcdnets.asus.com/pub/ASUS/misc/utils/MEI_Consumer_V11051189.zip
+
+# AUDIO
+https://dlcdnets.asus.com/pub/ASUS/misc/audio/Realtek_Audio_V7829_20160630.zip
+
+# BLUETOOTH
+https://dlcdnets.asus.com/pub/ASUS/misc/BT/Bluetooth_V1201650_WHQL_Win10.zip
+
+# WIFI GO
+https://dlcdnets.asus.com/pub/ASUS/misc/utils/Wi-Fi_GO_50031_117.zip
+
+# SATA
+https://dlcdnets.asus.com/pub/ASUS/misc/sata/IRST_V14_5_0_1081_WHQL.zip
+
+# BUNDLE AI SUITE AND OTHER UTILS
+https://dlcdnets.asus.com/pub/ASUS/misc/utils/AISuite3_Win7-8-8-1_M6F_VER10056.zip
