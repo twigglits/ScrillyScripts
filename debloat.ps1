@@ -6,4 +6,3 @@ choco upgrade all
 Set-Location Windows10Debloater
 .\Windows10SysPrepDebloater.ps1 -y
 Set-Location ..
-.\Disable_Windows_Defender_on_Windows_10.bat -y
