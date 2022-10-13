@@ -15,9 +15,10 @@ echo $nvidia
 Start-Process -FilePath $nvidia -ArgumentList "/S /v /qn" -passthru
 
 # LAN driver
-# Invoke-WebRequest -O LAN.zip https://dlcdnets.asus.com/pub/ASUS/lan/LAN_V20_1_2019_0_WHQL.zip
-# 7z x LAN.zip -y 
-# Move-Item LAN_V20.1.2019.0_WHQL\* drivers\LAN\
-# $LAN = 'drivers\LAN\AsusSetup.exe'
+Invoke-WebRequest -O LAN.zip https://dlcdnets.asus.com/pub/ASUS/lan/LAN_V20_1_2019_0_WHQL.zip
+7z x LAN.zip -y 
+Move-Item LAN_V20.1.2019.0_WHQL\ drivers\$files[1]
+$LAN = "drivers\"+ $files[1] + "\AsusSetup.exe"
+echo $LAN
 # Start-Process -FilePath $LAN -ArgumentList "/S /v /qn" -passthru
 
