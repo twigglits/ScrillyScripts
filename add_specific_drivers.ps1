@@ -5,7 +5,6 @@
 # Start-Process -FilePath $balena -ArgumentList "/S /v /qn" -passthru
 
 $files = "nvidia.exe" , "LAN" 
-# $files
 
 # Nvidia Driver
 Invoke-WebRequest -O $files[0] https://us.download.nvidia.com/Windows/517.48/517.48-desktop-win10-win11-64bit-international-dch-whql.exe
@@ -20,5 +19,5 @@ Invoke-WebRequest -O LAN.zip https://dlcdnets.asus.com/pub/ASUS/lan/LAN_V20_1_20
 Move-Item LAN_V20.1.2019.0_WHQL\ drivers\$files[1]
 $LAN = "drivers\"+ $files[1] + "\AsusSetup.exe"
 echo $LAN
-# Start-Process -FilePath $LAN -ArgumentList "/S /v /qn" -passthru
+Start-Process -FilePath $LAN -ArgumentList "/S /v /qn" -passthru
 
