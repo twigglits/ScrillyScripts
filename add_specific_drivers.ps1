@@ -4,9 +4,12 @@
 # $balena="drivers\balenaEtcher-Setup-1.7.9.exe"
 # Start-Process -FilePath $balena -ArgumentList "/S /v /qn" -passthru
 
-# Drivers
+# Function setup
+$folders = @()  # Intialization of empty array
+
+# Installers
 $files =  @("nvidia.exe" , "LAN.zip" , "chipset.zip")   # rename this to installers
-$folders = @()
+
 foreach ($file in $files)
 {
     $folders += $file.split(".")[0] # split here into string
