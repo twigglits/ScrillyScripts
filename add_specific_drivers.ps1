@@ -10,7 +10,7 @@ $files = "nvidia.exe" , "LAN"
 Invoke-WebRequest -O $files[0] https://us.download.nvidia.com/Windows/517.48/517.48-desktop-win10-win11-64bit-international-dch-whql.exe
 Move-Item $files[0] drivers\$files[0]
 $nvidia = "drivers\"+$files[0]
-echo $nvidia
+Write-Output $nvidia
 Start-Process -FilePath $nvidia -ArgumentList "/S /v /qn" -passthru
 
 # LAN driver
@@ -18,6 +18,5 @@ Invoke-WebRequest -O LAN.zip https://dlcdnets.asus.com/pub/ASUS/lan/LAN_V20_1_20
 7z x LAN.zip -y 
 Move-Item LAN_V20.1.2019.0_WHQL\ drivers\$files[1]
 $LAN = "drivers\"+ $files[1] + "\AsusSetup.exe"
-echo $LAN
+Write-Output $LAN
 Start-Process -FilePath $LAN -ArgumentList "/S /v /qn" -passthru
-
