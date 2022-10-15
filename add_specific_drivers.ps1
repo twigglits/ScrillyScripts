@@ -1,9 +1,3 @@
-# Balena Etcher
-# 7z x drivers.7z -y
-# start-sleep -Seconds 5
-# $balena="drivers\balenaEtcher-Setup-1.7.9.exe"
-# Start-Process -FilePath $balena -ArgumentList "/S /v /qn" -passthru
-
 # Function setup
 $folders = @()  # Intialization of empty array
 
@@ -25,7 +19,7 @@ Write-Output $folders[2]
 $dir = "drivers\" + $folders[0] + "\"
 $path = $dir + $files[0]
 new-item -type directory -path $dir -Force
-Invoke-WebRequest https://us.download.nvidia.com/Windows/517.48/517.48-desktop-win10-win11-64bit-international-dch-whql.exe 
+Invoke-WebRequest https://us.download.nvidia.com/Windows/517.48/517.48-desktop-win10-win11-64bit-international-dch-whql.exe -OutFile $path
 Start-Process -FilePath $path -ArgumentList "/S /v /qn" -passthru
 
 # LAN Driver 
