@@ -5,8 +5,6 @@ Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 scoop update
 scoop install sudo
 scoop install gsudo
-scoop install neofetch 
-scoop update neofetch
 
 # Specify the apps you want to install here:
 gsudo -n -w powershell ./apps_list.ps1
