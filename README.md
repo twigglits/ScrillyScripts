@@ -19,9 +19,12 @@ Then run the run_me.sp1 script with the following command:
 ```
 .\run_me.ps1
 ```
-Please NOTE that `git` is mandatory for this script and must be installed to allow for full execution of the script.
+Please NOTE that `git` is mandatory for this script and must be installed to allow for full execution of the script
 
 #### For installing commonly used apps:
+
+You can `add` or `remove` desired apps to be installed by opening [apps_list.ps1](apps_list.ps1) with a text editor
+and add the line `choco install <your-desired-package-here> -y` 
 
 You can open and modify the file [apps_list.ps1](apps_list.ps1) and add more lines of apps that get installed:
 
@@ -41,14 +44,23 @@ To install the list of apps specified in the script, run:
 .\add_common_apps.ps1
 ```
 
-NOTES:
+#### For installing specific drivers do:
 
-You can `add` or `remove` desired apps to be installed by opening [apps_list.ps1](apps_list.ps1) with a text editor
-and add the line `choco install <your-desired-package-here> -y` 
+Put your driver sources in the file [add_specific_drivers.ps1](add_specific_drivers.ps1). At the moment only the `Asus VI formula Extreme` Motherboard is supported
+and is already specified in the file by default, as well as the `GTX 970 Nvidia GPU`
+```
+.\add_specific_drivers.ps1
+```
+
+#### For running all of the scripts end-to-end simply run:
+```
+.\e2e.ps1
+```
+
+NOTES:
  
-While most of the script executes in unattended mode, you will have to specify that you would like to Disable Windows Defender near the end of the execution of this script.
+While most of the script executes in unattended mode, you will have to specify that you would like to Disable Windows Defender near the end of the execution of this script
 
 Things to improve:
 
-* Removal of third party windows defender disbaling script and replacing it with low level registry editor script that forcible removes windows defender and subsequent security background processes
-* Improved modularity of both common apps as well as specific drivers that are installed in their scripts `add_common_apps.ps1` and `add_specific_drivers.ps1` respectively
+* Removal of third party windows defender disabling script and replacing it with low level registry editor script that forcible removes windows defender and subsequent security background processes
