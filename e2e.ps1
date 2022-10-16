@@ -9,4 +9,3 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 .\debloat.ps1
 # Disable windows defender
 .\disable_defender.ps1
-
