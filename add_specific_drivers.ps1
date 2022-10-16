@@ -55,7 +55,8 @@ $path = $dir + $files[5]
 new-item -type directory -path $dir -Force
 Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/sata/IRST_V14_5_0_1081_WHQL.zip -OutFile $path
 7z e $path -odrivers\sata -y
-Start-Process -FilePath 'drivers\sata\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru
+Start-Process -FilePath 'drivers\sata\AsusSetup.exe' -ArgumentList "/S /v /qn" -NoNewWindow -Wait -passthru $process.ExitCode
+Start-Process -FilePath 'drivers\sata\AsusSetup.exe' -ArgumentList '/S','/v','/qn' -Wait -passthru # -NoNewWindow -Wait -passthru $process.ExitCode
 
 # Audio
 $dir = "drivers\" + $files[6] + "\"
@@ -71,10 +72,10 @@ $path = $dir + $files[7]
 new-item -type directory -path $dir -Force
 Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/wireless/WIFI_Win10_V6_34_223_5.zip -OutFile $path
 7z e $path -odrivers\wifi -y
-Start-Process -FilePath 'drivers\wifi\Setup.exe' -ArgumentList "/S /v /qn" -passthru
+Start-Process -FilePath 'drivers\wifi\Setup.exe' -ArgumentList "/S /v /qn" -NoNewWindow -Wait -passthru $process.ExitCode
 
-# '/S', '/v', '/qn'
-# '/S','/v"/qn"'
-# -NoNewWindow -Wait -PassThru $process.ExitCode
-# Setup.exe /?  /help
-# /exebasicui
+# # '/S', '/v', '/qn'
+# # '/S','/v"/qn"'
+# # -NoNewWindow -Wait -PassThru $process.ExitCode
+# # Setup.exe /?  /help
+# # /exebasicui
