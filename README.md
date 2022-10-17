@@ -61,7 +61,7 @@ and is already specified in the file by default, as well as the `GTX 970 Nvidia 
 
 #### 5.) Disabling windows `enhanced pointer precision` (ideal for gamers) do:
 ```
-.\disable_mouse_app.ps1
+.\disable_mouse_epp.ps1
 ```
 
 #### 6.) For running all of the scripts end-to-end simply run:
