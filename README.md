@@ -21,7 +21,11 @@ Then execute the script with the following command:
 ```
 Please NOTE that `git` is also installed in the execution of this script, it is a prerequisite for debloating the Windows 10
 
-#### 2.) For removing bloatware do:
+#### 2.) For disabling Defender do:
+
+```
+.\disable_defender.ps1
+```
 
 #### 3.) For installing commonly used apps:
 
@@ -47,7 +51,7 @@ To install the list of apps specified in the script, run:
 .\add_common_apps.ps1
 ```
 
-#### 3.) For installing specific drivers do:
+#### 4.) For installing specific drivers do:
 
 Put your driver sources in the file [add_specific_drivers.ps1](add_specific_drivers.ps1). At the moment only the `Asus VI formula Extreme` Motherboard is supported
 and is already specified in the file by default, as well as the `GTX 970 Nvidia GPU`
@@ -57,15 +61,15 @@ and is already specified in the file by default, as well as the `GTX 970 Nvidia 
 
 
 
-#### For running all of the scripts end-to-end simply run:
+#### 5.) For running all of the scripts end-to-end simply run:
 ```
 .\e2e.ps1
 ```
 
-NOTES:
+#### Notes:
  
 While most of the script executes in unattended mode, you will have to specify that you would like to Disable Windows Defender near the end of the execution of this script
 
-Things to improve:
+#### Things to improve:
 
 * Removal of third party windows defender disabling script and replacing it with low level registry editor script that forcible removes windows defender and subsequent security background processes
