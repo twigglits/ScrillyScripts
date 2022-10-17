@@ -17,7 +17,7 @@ cd ~\<Location to where you downloaded the folder>\SillyScripts
 ```
 Then run the run_me.sp1 script with the following command:
 ```
-.\run_me.ps1
+.\debloat.ps1
 ```
 Please NOTE that `git` is mandatory for this script and must be installed to allow for full execution of the script
 
@@ -30,13 +30,14 @@ You can open and modify the file [apps_list.ps1](apps_list.ps1) and add more lin
 
 Currently the script is set to install the following apps in unattended mode:
 
-* spotify
-* discord
-* googlechrome
-* steamclient
-* qbittorrent
-* vscode
-* 7zip
+* spotify 
+* discord 
+* googlechrome 
+* steam-client 
+* qbittorrent 
+* vlc
+* vscode 
+* 7zip 
 
 To install the list of apps specified in the script, run:
 
