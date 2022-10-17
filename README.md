@@ -8,25 +8,27 @@ The following line MUST be run as administrator in powershell so that scripts ca
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-#### For removing bloatware do:
+#### 1.) For removing bloatware do:
 
 First, be sure to open Powershell with `Administrator` privileges,
 Then run the following command:
 ```
 cd ~\<Location to where you downloaded the folder>\SillyScripts 
 ```
-Then run the run_me.sp1 script with the following command:
+Then execute the script with the following command:
 ```
 .\debloat.ps1
 ```
-Please NOTE that `git` is mandatory for this script and must be installed to allow for full execution of the script
+Please NOTE that `git` is also installed in the execution of this script, it is a prerequisite for debloating the Windows 10
 
-#### For installing commonly used apps:
+#### 2.) For removing bloatware do:
+
+#### 3.) For installing commonly used apps:
 
 You can `add` or `remove` desired apps to be installed by opening [apps_list.ps1](apps_list.ps1) with a text editor
 and add the line `choco install <your-desired-package-here> -y` 
 
-You can open and modify the file [apps_list.ps1](apps_list.ps1) and add more lines of apps that get installed:
+You can open and modify the file [apps_list.ps1](apps_list.ps1) and add/remove which apps get installed
 
 Currently the script is set to install the following apps in unattended mode:
 
@@ -45,13 +47,15 @@ To install the list of apps specified in the script, run:
 .\add_common_apps.ps1
 ```
 
-#### For installing specific drivers do:
+#### 3.) For installing specific drivers do:
 
 Put your driver sources in the file [add_specific_drivers.ps1](add_specific_drivers.ps1). At the moment only the `Asus VI formula Extreme` Motherboard is supported
 and is already specified in the file by default, as well as the `GTX 970 Nvidia GPU`
 ```
 .\add_specific_drivers.ps1
 ```
+
+
 
 #### For running all of the scripts end-to-end simply run:
 ```
