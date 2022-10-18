@@ -26,7 +26,7 @@ Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/lan/LAN_V20_1_2019_0_WHQL.z
 Start-Process -FilePath 'drivers\LAN\LAN_V20.1.2019.0_WHQL\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru
 
 # Chipset
-$dir = "drivers\" + $files[2] + "\"  #folder doesn't have \ sign so then...
+$dir = "drivers\" + $files[2] + "\"  #folder doesn't have \ sign so then... this is a test change
 $path = $dir + $files[2]
 new-item -type directory -path $dir -Force
 Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/utils/MEI_Consumer_V11051189.zip -OutFile $path # truncate get zip, exe away and just leave path
