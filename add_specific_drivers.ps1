@@ -47,7 +47,7 @@ $path = $dir + $files[4]
 new-item -type directory -path $dir -Force
 Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/BT/Bluetooth_V1201650_WHQL_Win10.zip -OutFile $path
 7z e $path -odrivers\bt -y
-Start-Process -FilePath 'drivers\bt\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru
+Start-Process -FilePath 'drivers\bt\setup.exe' -ArgumentList "/S /v /qn" -passthru
 
 # SATA (Intel Rapid Storage Technology (IRST))
 $dir = "drivers\" + $files[5] + "\"
@@ -73,8 +73,8 @@ Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/wireless/WIFI_Win10_V6
 7z e $path -odrivers\wifi -y
 Start-Process -FilePath 'drivers\wifi\Setup.exe' -ArgumentList "/S /v /qn" -passthru
 
-# # '/S', '/v', '/qn'
-# # '/S','/v"/qn"'
-# # -NoNewWindow -Wait -PassThru $process.ExitCode
-# # Setup.exe /?  /help
-# # /exebasicui
+# # # '/S', '/v', '/qn'
+# # # '/S','/v"/qn"'
+# # # -NoNewWindow -Wait -PassThru $process.ExitCode
+# # # Setup.exe /?  /help
+# # # /exebasicui
