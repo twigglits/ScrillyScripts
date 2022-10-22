@@ -76,3 +76,4 @@ While most of the script executes in unattended mode, you will have to specify t
 #### Things to improve:
 
 * Removal of third party windows defender disabling script and replacing it with low level registry editor script that forcible removes windows defender and subsequent security background processes
+* Migrating away from Chocolatey's package manager to use `winget` which should integrate better because it's native to windows 10. 
