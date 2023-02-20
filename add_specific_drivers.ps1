@@ -11,11 +11,18 @@ $files =  @("nvidia" , "LAN" , "chipset" , "AI_suite" , "bt", "sata", "audio", "
 
 
 # # Nvidia Driver
-$dir = "drivers\" + $files[0] + "\"
-$path = $dir + $files[0]
-new-item -type directory -path $dir -Force
-Invoke-WebRequest https://us.download.nvidia.com/Windows/517.48/517.48-desktop-win10-win11-64bit-international-dch-whql.exe -OutFile drivers\nvidia\nvidia.exe
-Start-Process -FilePath 'drivers\nvidia\nvidia.exe' -ArgumentList "/S /v /qn" -passthru
+# $dir = "drivers\" + $files[0] + "\"
+# $path = $dir + $files[0]
+# new-item -type directory -path $dir -Force
+# Invoke-WebRequest https://us.download.nvidia.com/Windows/517.48/517.48-desktop-win10-win11-64bit-international-dch-whql.exe -OutFile drivers\nvidia\nvidia.exe
+# Start-Process -FilePath 'drivers\nvidia\nvidia.exe' -ArgumentList "/S /v /qn" -passthru
+
+# Nvidia Driver Scheduled pull task
+$path = "C:\Users\jnaud\Desktop\SillyScripts"
+New-Item -ItemType Directory -Force -Path $path | Out-Null
+Invoke-WebRequest -Uri "https://github.com/lord-carlos/nvidia-update/raw/master/nvidia.ps1" -OutFile "$path\nvidia.ps1" -UseBasicParsing
+SchTasks /Create /SC DAILY /TN "Nvidia-Updater" /TR "powershell -NoProfile -ExecutionPolicy Bypass -File $path\nvidia.ps1" /ST 10:00
+schtasks /run /tn "Nvidia-Updater"
 
 # LAN Driver 
 $dir = "drivers\" + $files[1] + "\"
