@@ -1,21 +1,5 @@
-# Function setup
-# $folders = @()  # Intialization of empty array
-
 #  Installers
-$files =  @("nvidia" , "LAN" , "chipset" , "AI_suite" , "bt", "sata", "audio", "wifi")   # rename this to installers   name of compressed folders..., vs names of actual extracted installers
-
-# foreach ($file in $files)
-# {
-#     $folders += $file.split(".")[0] # remove file extension here from the name (e.g. .exe , .zip)
-# }
-
-
-# # Nvidia Driver
-# $dir = "drivers\" + $files[0] + "\"
-# $path = $dir + $files[0]
-# new-item -type directory -path $dir -Force
-# Invoke-WebRequest https://us.download.nvidia.com/Windows/517.48/517.48-desktop-win10-win11-64bit-international-dch-whql.exe -OutFile drivers\nvidia\nvidia.exe
-# Start-Process -FilePath 'drivers\nvidia\nvidia.exe' -ArgumentList "/S /v /qn" -passthru
+$files =  @("nvidia" , "LAN" , "chipset" , "AI_suite" , "bt", "sata", "audio", "wifi")   # nvidia manual download, not being used anymore, using generalized approach now
 
 # Nvidia Driver Scheduled pull task
 $path = "C:\Users\jnaud\Desktop\SillyScripts"
@@ -36,7 +20,7 @@ Start-Process -FilePath 'drivers\LAN\LAN_V20.1.2019.0_WHQL\AsusSetup.exe' -Argum
 $dir = "drivers\" + $files[2] + "\"  #folder doesn't have \ sign so then... this is a test change
 $path = $dir + $files[2]
 new-item -type directory -path $dir -Force
-Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/utils/MEI_Consumer_V11051189.zip -OutFile $path # truncate get zip, exe away and just leave path
+Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/utils/MEI_Consumer_V11051189.zip -OutFile $path 
 7z e $path -odrivers\chipset -y
 Start-Process -FilePath 'drivers\chipset\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru
 
@@ -62,7 +46,7 @@ $path = $dir + $files[5]
 new-item -type directory -path $dir -Force
 Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/sata/IRST_V14_5_0_1081_WHQL.zip -OutFile $path
 7z e $path -odrivers\sata -y
-Start-Process -FilePath 'drivers\sata\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru # -NoNewWindow -Wait -passthru $process.ExitCode
+Start-Process -FilePath 'drivers\sata\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru 
 
 # Audio
 $dir = "drivers\" + $files[6] + "\"
@@ -79,9 +63,3 @@ new-item -type directory -path $dir -Force
 Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/wireless/WIFI_Win10_V6_34_223_5.zip -OutFile $path
 7z e $path -odrivers\wifi -y
 Start-Process -FilePath 'drivers\wifi\Setup.exe' -ArgumentList "/S /v /qn" -passthru
-
-# # # # '/S', '/v', '/qn'
-# # # # '/S','/v"/qn"'
-# # # # -NoNewWindow -Wait -PassThru $process.ExitCode
-# # # # Setup.exe /?  /help
-# # # # /exebasicui
