@@ -2,13 +2,13 @@
 $files =  @("nvidia" , "LAN" , "chipset" , "AI_suite" , "bt", "sata", "audio", "wifi")   # nvidia manual download, not being used anymore, using generalized approach now
 
 # Nvidia Driver Scheduled pull task
-$path = "C:\Users\jnaud\Desktop\SillyScripts"
+$path = Get-Location
 New-Item -ItemType Directory -Force -Path $path | Out-Null
 Invoke-WebRequest -Uri "https://github.com/lord-carlos/nvidia-update/raw/master/nvidia.ps1" -OutFile "$path\nvidia.ps1" -UseBasicParsing
 SchTasks /Create /SC DAILY /TN "Nvidia-Updater" /TR "powershell -NoProfile -ExecutionPolicy Bypass -File $path\nvidia.ps1" /ST 10:00 /F
 schtasks /run /tn "Nvidia-Updater" 
 
-LAN Driver 
+# LAN Driver 
 $dir = "drivers\" + $files[1] + "\"
 $path = $dir + $files[1]
 new-item -type directory -path $dir -Force
@@ -24,7 +24,7 @@ Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/utils/MEI_Consumer_V11
 7z e $path -odrivers\chipset -y
 Start-Process -FilePath 'drivers\chipset\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru
 
-# # AI Suite
+# AI Suite
 $dir = "drivers\" + $files[3] + "\"
 $path = $dir + $files[3]
 new-item -type directory -path $dir -Force
