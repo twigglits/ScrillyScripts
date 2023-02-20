@@ -1,6 +1,6 @@
 $ConnectedMonitors = Get-PnpDevice | `
-    where {$_.FriendlyName -eq "Xbox One Wireless Controller"} | `
-    where {$_.status -eq "OK"}
+    Where-Object {$_.FriendlyName -eq "Xbox One Wireless Controller"} | `
+    Where-Object {$_.status -eq "OK"}
 
 if (@($ConnectedMonitors) -like "*Xbox*"){
     Write-host "launching Big Picture.."
