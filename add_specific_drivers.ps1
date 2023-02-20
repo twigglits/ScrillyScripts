@@ -21,10 +21,10 @@ $files =  @("nvidia" , "LAN" , "chipset" , "AI_suite" , "bt", "sata", "audio", "
 $path = "C:\Users\jnaud\Desktop\SillyScripts"
 New-Item -ItemType Directory -Force -Path $path | Out-Null
 Invoke-WebRequest -Uri "https://github.com/lord-carlos/nvidia-update/raw/master/nvidia.ps1" -OutFile "$path\nvidia.ps1" -UseBasicParsing
-SchTasks /Create /SC DAILY /TN "Nvidia-Updater" /TR "powershell -NoProfile -ExecutionPolicy Bypass -File $path\nvidia.ps1" /ST 10:00
-schtasks /run /tn "Nvidia-Updater"
+SchTasks /Create /SC DAILY /TN "Nvidia-Updater" /TR "powershell -NoProfile -ExecutionPolicy Bypass -File $path\nvidia.ps1" /ST 10:00 /F
+schtasks /run /tn "Nvidia-Updater" 
 
-# LAN Driver 
+LAN Driver 
 $dir = "drivers\" + $files[1] + "\"
 $path = $dir + $files[1]
 new-item -type directory -path $dir -Force
@@ -80,8 +80,8 @@ Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/wireless/WIFI_Win10_V6
 7z e $path -odrivers\wifi -y
 Start-Process -FilePath 'drivers\wifi\Setup.exe' -ArgumentList "/S /v /qn" -passthru
 
-# # # '/S', '/v', '/qn'
-# # # '/S','/v"/qn"'
-# # # -NoNewWindow -Wait -PassThru $process.ExitCode
-# # # Setup.exe /?  /help
-# # # /exebasicui
+# # # # '/S', '/v', '/qn'
+# # # # '/S','/v"/qn"'
+# # # # -NoNewWindow -Wait -PassThru $process.ExitCode
+# # # # Setup.exe /?  /help
+# # # # /exebasicui
