@@ -3,7 +3,6 @@
 #   the change will probably only come to effect once the system is restarted
 #   We use the registry for state tracking and for completeness (if the system gets restarted)
 
-
 $RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]"CurrentUser","$env:COMPUTERNAME")
 $RegMouse = $RegConnect.OpenSubKey("Control Panel\Mouse",$true)
 

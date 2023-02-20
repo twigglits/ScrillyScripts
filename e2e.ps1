@@ -4,7 +4,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 # Add specific drivers from specific sources (This is unique for each user and you should not use the defaults set `add_specific_drivers.ps1`)
 .\add_specific_drivers.ps1
 # Disable windows mouse "precision" drivers
-.\toggle_mouse_acc.ps1
+.\disable_mouse_epp.ps1
 # Debloat windows 10
 .\debloat.ps1
 # Disable windows defender
