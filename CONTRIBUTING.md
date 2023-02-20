@@ -12,5 +12,5 @@ The scope of this project is to simply to get people's gaming PC's up to date ri
 * installing commonly used apps 
 * installing specific drivers that are system specific
 * applying auto overclocks in code
-* optiimizing system settings for gaming
+* optimizing system settings for gaming
 * any other cool things that guys can think of....
