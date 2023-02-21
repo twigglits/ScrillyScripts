@@ -6,7 +6,7 @@ $path = Get-Location
 New-Item -ItemType Directory -Force -Path $path | Out-Null
 Invoke-WebRequest -Uri "https://github.com/lord-carlos/nvidia-update/raw/master/nvidia.ps1" -OutFile "$path\nvidia.ps1" -UseBasicParsing
 SchTasks /Create /SC DAILY /TN "Nvidia-Updater" /TR "powershell -NoProfile -ExecutionPolicy Bypass -File $path\nvidia.ps1" /ST 10:00 /F
-schtasks /run /tn "Nvidia-Updater" 
+schtasks /run /tn "Nvidia-Updater"
 
 # LAN Driver 
 $dir = "drivers\" + $files[1] + "\"
