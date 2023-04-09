@@ -5,4 +5,3 @@ choco upgrade all
 .\git_script.sh
 Set-Location Windows10Debloater
 .\Windows10SysPrepDebloater.ps1 -y
-Set-Location ..
