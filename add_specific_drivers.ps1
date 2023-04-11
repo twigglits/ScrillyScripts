@@ -1,12 +1,7 @@
 #  Installers
 $files =  @("nvidia" , "LAN" , "chipset" , "AI_suite" , "bt", "sata", "audio", "wifi")   # nvidia manual download, not being used anymore, using generalized approach now
 
-# Nvidia Driver Scheduled pull task
-$path = Get-Location
-New-Item -ItemType Directory -Force -Path $path | Out-Null
-# Invoke-WebRequest -Uri "https://github.com/lord-carlos/nvidia-update/raw/master/nvidia.ps1" -OutFile "$path\nvidia.ps1" -UseBasicParsing
-.\nvidia.ps1
-
+# nvidia driver was replaced with choco install 
 
 # LAN Driver 
 $dir = "drivers\" + $files[1] + "\"
