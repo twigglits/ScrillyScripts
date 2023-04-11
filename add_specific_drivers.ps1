@@ -56,5 +56,5 @@ $dir = "drivers\" + $files[7] + "\"
 $path = $dir + $files[7]
 new-item -type directory -path $dir -Force
 Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/wireless/WIFI_Win10_V6_34_223_5.zip -OutFile $path
-7z e $path -odrivers\wifi -y
+7z e $path -odrivers\wifi -r -y
 Start-Process -FilePath 'drivers\wifi\Setup.exe' -ArgumentList "/S /v /qn" -passthru
