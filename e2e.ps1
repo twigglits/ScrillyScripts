@@ -1,7 +1,10 @@
+# Modifying system permissions
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-# Add common apps
+Set-ExecutionPolicy RemoteSigned
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
 
+
+# Add common apps
 .\apps_list.ps1
 # Add specific drivers from specific sources (This is unique for each user and you should not use the defaults set `add_specific_drivers.ps1`)
 .\add_specific_drivers.ps1
