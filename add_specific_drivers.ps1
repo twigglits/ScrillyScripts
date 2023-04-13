@@ -13,14 +13,6 @@ $Ar = New-Object System.Security.AccessControl.FileSystemAccessRule("Users", "Fu
 $Acl.SetAccessRule($Ar)
 Set-Acl -Path $dir -AclObject $Acl
 
-# # LAN Driver 
-$dir = "drivers\" + $files[1] + "\"
-$path = $dir + $files[1]
-new-item -type directory -path $dir -Force
-Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/lan/LAN_V20_1_2019_0_WHQL.zip -OutFile $path
-7z x $path -odrivers\LAN -y
-Start-Process -FilePath 'drivers\LAN\LAN_V20.1.2019.0_WHQL\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru
-
 # Chipset
 $dir = "drivers\" + $files[2] + "\"  
 $path = $dir + $files[2]
@@ -68,3 +60,13 @@ new-item -type directory -path $dir -Force
 Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/misc/wireless/WIFI_Win10_V6_34_223_5.zip -OutFile $path
 7z x $path -odrivers\ -y
 Start-Process -FilePath 'drivers\wifi\Win10\Install_CD\Setup.exe' -ArgumentList "/S /v /qn" -passthru
+
+# # LAN Driver 
+$dir = "drivers\" + $files[1] + "\"
+$path = $dir + $files[1]
+new-item -type directory -path $dir -Force
+Invoke-WebRequest https://dlcdnets.asus.com/pub/ASUS/lan/LAN_V20_1_2019_0_WHQL.zip -OutFile $path
+7z x $path -odrivers\LAN -y
+Start-Process -FilePath 'drivers\LAN\LAN_V20.1.2019.0_WHQL\AsusSetup.exe' -ArgumentList "/S /v /qn" -passthru
+
+Read-Host -Prompt "Press any key to continue..."
