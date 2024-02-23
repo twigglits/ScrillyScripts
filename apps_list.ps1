@@ -14,7 +14,6 @@ choco install notepadplusplus -y
 choco install nvidia-display-driver -y
 choco install obs-studio -y
 choco install openrgb -y
-choco install parsec -y
 choco install python3 -y
 choco install python311 -y
 choco install qbittorrent -y
